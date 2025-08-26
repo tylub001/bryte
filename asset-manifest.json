@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/bryte/static/css/main.6acd4ca8.css",
+    "main.js": "/bryte/static/js/main.15118b71.js",
+    "static/js/453.f588de3e.chunk.js": "/bryte/static/js/453.f588de3e.chunk.js",
+    "static/media/computer.jpg": "/bryte/static/media/computer.e3ee63a3bf2e919f0cbc.jpg",
+    "static/media/rr.png": "/bryte/static/media/rr.662804858c0321b9172e.png",
+    "index.html": "/bryte/index.html",
+    "main.6acd4ca8.css.map": "/bryte/static/css/main.6acd4ca8.css.map",
+    "main.15118b71.js.map": "/bryte/static/js/main.15118b71.js.map",
+    "453.f588de3e.chunk.js.map": "/bryte/static/js/453.f588de3e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6acd4ca8.css",
+    "static/js/main.15118b71.js"
+  ]
+}
