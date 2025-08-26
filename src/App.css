@@ -1,10 +1,369 @@
 .App {
+
   text-align: center;
+  background-color: rgb(0, 0, 0);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.extra {
+  z-index: 4;
+  display: block;
+}
+
+.video-background video {
+  width: 100%;
+  height:100vh;
+  object-fit: cover; /* or 'contain' if you want full visibility */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-bottom: 2px solid goldenrod;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+.nav__name {
+  margin: 0;
+  display: flex;
+  
+}
+.nav__description {
+  font-size: 10px;
+  font-weight: 600;
+  margin: 0;
+  color: goldenrod;
+    display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+.nav__header {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  width:100%;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  padding-left: 20px;
+}
+
+.nav {
+  border-bottom: 2px solid goldenrod;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 20px;
+  cursor: pointer;
+  justify-content: flex-end;
+  padding-right: 20px;
+  position: relative;
+  top: -50px; /* Start above the screen */
+  opacity: 0;
+  animation: slideDownNav 1.5s ease-out forwards;
+  animation-delay: 1s; /* Optional delay */
+ 
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+color: white;
+  padding:0;
+ position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 10;
+}
+
+.nav-wrapper {
+  width: 100%;
+}
+
+.dropdown {
+  position: fixed;
+  top: 80px; /* Adjust based on your navbar height */
+  left: 0;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.623);
+  padding: 20px 40px;
+  z-index: 1000;
+opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+}
+
+.dropdown--visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+}
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.dropdown__content p {
+  display: flex;
+  justify-content: center;
+  transition: color 0.3s ease;
+  margin: 0;
+  padding: 0;
+  color: white;
+  column-gap: 10px;
+}
+
+.nav__item {
+  padding: 0 20px;
+  cursor: pointer;
+   transition: color 0.5s ease;
+  
+}
+.nav__item:hover {
+   color: goldenrod;
+   
+}
+.dropdown__content p:hover {
+  color: goldenrod
+}
+
+@keyframes slideDownNav {
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.nav > * {
+  color: white; /* or your default color */
+  transition: color 0.5s ease;
+}
+
+.nav > *:hover {
+  color: goldenrod;
+}
+
+@keyframes slideUp {
+  to {
+    bottom: 50%; /* Final position */
+    transform: translate(-50%, 50%);
+  }
+}
+
+.welcome {
+  background-color: rgb(61, 61, 61);
+}
+
+h1 {
+  margin: 0;
+}
+
+.omnia-container {
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  height: 80vh;
+  z-index: 3;
+}
+
+.omnia-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1;
+}
+
+.letter-pair {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transform: translateX(100px);
+  animation: slideIn 0.9s ease-out forwards;
+}
+
+.letter-pair:nth-child(1) {
+  animation-delay: 0.6s;
+}
+.letter-pair:nth-child(2) {
+  animation-delay: 0.9s;
+}
+.letter-pair:nth-child(3) {
+  animation-delay: 1.2s;
+}
+.letter-pair:nth-child(4) {
+  animation-delay: 1.5s;
+}
+.letter-pair:nth-child(5) {
+  animation-delay: 1.7s;
+}
+
+.letter {
+  font-size: 3rem;
+  color: goldenrod;
+  font-weight: bold;
+}
+
+.word {
+  font-size: 2rem;
+  color: white;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.workspace {
+  z-index: 3;
+  color: white;
+  background-color: #000000;
+  opacity: 0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%;
+display: flex;
+flex-direction: column;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+  animation: fadeInWorkspace 2s ease-in forwards;
+  animation-delay: 2s;
+  margin-left: auto;
+  margin-right: 70px;
+  margin-top: 40px;
+}
+.extra {
+  background-color: transparent;
+  font-size: 10px;
+  display: flex;
+  text-align: left;
+  gap: 15px;
+  margin-top: 10px;
+  color: goldenrod;
+  width:80%;
+  align-self: center;
+
+}
+  
+  
+
+.title {
+  margin: 0;
+  font-size: 20px;
+}
+.join {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: gold;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  width: 40%;
+  align-self: center;
+}
+.join:hover {
+  background-color: goldenrod;
+}
+
+
+.early-access {
+  position: relative;
+  color: white;
+  padding: 40px;
+  text-align: center;
+  overflow: hidden;
+  
+}
+
+.early-access::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/computer.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.early-access > * {
+  position: relative;
+  z-index: 1;
+}
+.text{
+font-size: 40px;
+margin: 0;
+}
+
+.signup-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 80%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.signup-input {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  width: 60%;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.signup-button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: gold;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.signup-button:hover {
+  background-color: goldenrod;
+}
+
+@keyframes fadeInWorkspace {
+  to {
+    opacity: 0.8;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
